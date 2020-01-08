@@ -4,13 +4,13 @@
 #
 Name     : perl-Text-CharWidth
 Version  : 0.04
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
-Summary  : Perl/CPAN Module Text::CharWidth
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Artistic-1.0
-Requires: perl-Text-CharWidth-lib = %{version}-%{release}
+Requires: perl-Text-CharWidth-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,31 +22,31 @@ wcswidth(3).  This also provides mblen(3) equivalent subroutine.
 %package dev
 Summary: dev components for the perl-Text-CharWidth package.
 Group: Development
-Requires: perl-Text-CharWidth-lib = %{version}-%{release}
 Provides: perl-Text-CharWidth-devel = %{version}-%{release}
-Requires: perl-Text-CharWidth = %{version}-%{release}
 Requires: perl-Text-CharWidth = %{version}-%{release}
 
 %description dev
 dev components for the perl-Text-CharWidth package.
 
 
-%package lib
-Summary: lib components for the perl-Text-CharWidth package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Text-CharWidth package.
+Group: Default
+Requires: perl-Text-CharWidth = %{version}-%{release}
 
-%description lib
-lib components for the perl-Text-CharWidth package.
+%description perl
+perl components for the perl-Text-CharWidth package.
 
 
 %prep
 %setup -q -n Text-CharWidth-0.04
+cd %{_builddir}/Text-CharWidth-0.04
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -56,7 +56,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -76,12 +76,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Text/CharWidth.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Text::CharWidth.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Text/CharWidth/CharWidth.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Text/CharWidth.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Text/CharWidth/CharWidth.so
