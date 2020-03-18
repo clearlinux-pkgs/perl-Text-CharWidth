@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-CharWidth
 Version  : 0.04
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
 Summary  : No detailed summary available
@@ -83,5 +83,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Text/CharWidth.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Text/CharWidth/CharWidth.so
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Text/CharWidth.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/Text/CharWidth/CharWidth.so
