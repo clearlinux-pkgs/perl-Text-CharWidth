@@ -7,7 +7,7 @@
 #
 Name     : perl-Text-CharWidth
 Version  : 0.04
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz
 Summary  : No detailed summary available
